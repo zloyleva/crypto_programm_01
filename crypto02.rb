@@ -56,6 +56,10 @@ post '/' do
 		@div_out += "<div class=\"color\" style=\"height: #{item_for_div[1]}px \"><div class=\"item\">#{item_for_div[0]}:#{item_for_div[1]}</div></div>\n"
 	end
 
+	output_file = File.open("text.txt", "a")
+	output_file.write "Input text: #{input_string}\nOffset: #{change_step}\nEncoding string: #{@string_Crypto}"
+	output_file.close
+
 	erb :index
 
 end
